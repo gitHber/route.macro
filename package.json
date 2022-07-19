@@ -1,6 +1,6 @@
 {
   "name": "route.macro",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "generate routes like umijs",
   "main": "macro.js",
   "typings": "macro.d.ts",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gitHber/export-all.macro.git"
+    "url": "git+https://github.com/gitHber/route.macro.git"
   },
   "keywords": [],
   "author": "gitHber",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gitHber/export-all.macro/issues"
+    "url": "https://github.com/gitHber/route.macro/issues"
   },
-  "homepage": "https://github.com/gitHber/export-all.macro#readme",
+  "homepage": "https://github.com/gitHber/route.macro#readme",
   "dependencies": {
     "@babel/generator": "^7.18.7",
     "@babel/types": "^7.18.8"

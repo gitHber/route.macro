@@ -12,9 +12,9 @@ generate routes by directory, just like umijs or nextjs
 ## install
 
 ```shell
-npm i -D export.macro
+npm i -D route.macro
 // or
-yarn add -D export.macro
+yarn add -D route.macro
 ```
 
 ## ensure you have installed babel-plugin-macros
@@ -36,7 +36,7 @@ const routes = genRoute("./pages", {
   include: /[^.]*(\.(t|j)sx?)?$/,
   exclude: /components|(\.(less|css|md))$/
   injectTitle: true, // will injectTitle by component.title, asyncComponent must be false 
-  asyncComponent: true
+  asyncComponent: false
 });
 
 export default routes;
@@ -45,50 +45,74 @@ export default routes;
 output：
 
 ```js
-import { name as _Users_route_macro_pages_index_tsx_name } from "/Users/route.macro/pages/index.tsx";
-import { name as _Users_route_macro_pages_user_index_tsx_name } from "/Users/route.macro/pages/user/index.tsx";
-import { name as _Users_route_macro_pages_user__uid__index_tsx_name } from "/Users/route.macro/pages/user/[uid]/index.tsx";
-import { name as _Users_route_macro_pages_test_index_t_tsx_name } from "/Users/route.macro/pages/test/index.t.tsx";
-import { name as _Users_route_macro_pages_login_tsx_name } from "/Users/route.macro/pages/login.tsx";
-import { name as _Users_route_macro_pages_author__authorid__tsx_name } from "/Users/route.macro/pages/author/[authorid].tsx";
+import _pages_index_tsx_component from "./pages/index.tsx";
+import _pages_user_index_tsx_component from "./pages/user/index.tsx";
+import _pages_user__uid__index_tsx_component from "./pages/user/[uid]/index.tsx";
+import _pages_test_index_t_tsx_component from "./pages/test/index.t.tsx";
+import _pages_login_tsx_component from "./pages/login.tsx";
+import _pages_author__authorid__tsx_component from "./pages/author/[authorid].tsx";
 
-const routes = [{
-  path: "/",
-  children: [{
-    path: "/author/",
-    children: [{
-      path: "/author/:authorid/",
-      children: [],
-      component: () => import("/Users/route.macro/pages/author/[authorid].tsx"),
-      name: _Users_route_macro_pages_author__authorid__tsx_name
-    }]
-  }, {
-    path: "/login/",
-    children: [],
-    component: () => import("/Users/route.macro/pages/login.tsx"),
-    name: _Users_route_macro_pages_login_tsx_name
-  }, {
-    path: "/test/",
-    children: [{
-      path: "/test/index.t/",
-      children: [],
-      component: () => import("/Users/route.macro/pages/test/index.t.tsx"),
-      name: _Users_route_macro_pages_test_index_t_tsx_name
-    }]
-  }, {
-    path: "/user/",
-    children: [{
-      path: "/user/:uid/",
-      children: [],
-      component: () => import("/Users/route.macro/pages/user/[uid]/index.tsx"),
-      name: _Users_route_macro_pages_user__uid__index_tsx_name
-    }],
-    component: () => import("/Users/route.macro/pages/user/index.tsx"),
-    name: _Users_route_macro_pages_user_index_tsx_name
-  }],
-  component: () => import("/Users/route.macro/pages/index.tsx"),
-  name: _Users_route_macro_pages_index_tsx_name
-}];
+const routes = [
+  {
+    path: "/",
+    children: [
+      {
+        path: "/author/",
+        children: [
+          {
+            path: "/author/:authorid/",
+            children: [],
+            component:
+              _pages_author__authorid__tsx_component,
+            title:
+              _pages_author__authorid__tsx_component.title,
+          },
+        ],
+      },
+      {
+        path: "/login/",
+        children: [],
+        component:
+          _pages_login_tsx_component,
+        title:
+          _pages_login_tsx_component.title,
+      },
+      {
+        path: "/test/",
+        children: [
+          {
+            path: "/test/index.t/",
+            children: [],
+            component:
+              _pages_test_index_t_tsx_component,
+            title:
+              _pages_test_index_t_tsx_component.title,
+          },
+        ],
+      },
+      {
+        path: "/user/",
+        children: [
+          {
+            path: "/user/:uid/",
+            children: [],
+            component:
+              _pages_user__uid__index_tsx_component,
+            title:
+              _pages_user__uid__index_tsx_component.title,
+          },
+        ],
+        component:
+          _pages_user_index_tsx_component,
+        title:
+          _pages_user_index_tsx_component.title,
+      },
+    ],
+    component: _pages_index_tsx_component,
+    title:
+      _pages_index_tsx_component.title,
+  },
+];
 export default routes;
 ```
 
