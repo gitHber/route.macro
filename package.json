@@ -1,0 +1,48 @@
+{
+  "name": "route.macro",
+  "version": "0.0.1",
+  "description": "generate routes like umijs",
+  "main": "macro.js",
+  "typings": "macro.d.ts",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:update": "jest -u"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitHber/export-all.macro.git"
+  },
+  "keywords": [],
+  "author": "gitHber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gitHber/export-all.macro/issues"
+  },
+  "homepage": "https://github.com/gitHber/export-all.macro#readme",
+  "dependencies": {
+    "@babel/generator": "^7.18.7",
+    "@babel/types": "^7.18.8"
+  },
+  "peerDependencies": {
+    "babel-plugin-macros": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@types/react": "^18.0.15",
+    "babel-plugin-tester": "^10.1.0",
+    "jest": "^28.1.2",
+    "react": "^18.2.0",
+    "babel-plugin-macros": "^3.1.0"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
+  "files": [
+    "README.md",
+    "macro.js",
+    "macro.d.ts"
+  ]
+}

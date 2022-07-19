@@ -1,15 +1,15 @@
-English | [简体中文](./README_zh-CN.md)
+[English](./README.md) | 简体中文
 
 <div align="center">
 <h1>route.macro</h1>
-generate routes by directory, just like umijs or nextjs
+根据目录结构生成路由结构，类似umijs
 </div>
 
 [![NPM version](https://img.shields.io/npm/v/route.macro.svg?style=flat)](https://npmjs.org/package/route.macro)
 [![Build Status](https://www.travis-ci.org/gitHber/route.macro.svg?branch=master)](https://www.travis-ci.org/github/gitHber/route.macro)
 [![codecov](https://codecov.io/gh/gitHber/route.macro/branch/master/graph/badge.svg)](https://codecov.io/gh/gitHber/route.macro)
 
-## install
+## 安装
 
 ```shell
 npm i -D export.macro
@@ -17,7 +17,7 @@ npm i -D export.macro
 yarn add -D export.macro
 ```
 
-## ensure you have installed babel-plugin-macros
+## 先安装 babel-plugin-macros
 
 `.babelrc`
 
@@ -27,7 +27,7 @@ yarn add -D export.macro
 }
 ```
 
-## usage
+## 使用
 
 ```js
 import genRoute from "route.macro";
@@ -35,7 +35,7 @@ import genRoute from "route.macro";
 const routes = genRoute("./pages", {
   include: /[^.]*(\.(t|j)sx?)?$/,
   exclude: /components|(\.(less|css|md))$/
-  injectTitle: true, // will injectTitle by component.title, asyncComponent must be false 
+  injectName: true,
   asyncComponent: true
 });
 
@@ -91,14 +91,13 @@ const routes = [{
 }];
 export default routes;
 ```
-
-## config
+## 配置
 .babel-plugin-macrosrc.js
 ```js
 const path = require("path");
 module.exports = {
   routeHelper: {
-    // filename path dir need created by yourself
+    // 文件名 文件目录需要手动创建
     output: (filename) => path.resolve(__dirname, "output/", filename),
   },
 };
